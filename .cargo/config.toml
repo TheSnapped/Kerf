@@ -1,0 +1,4 @@
+# Link the C runtime statically so kerf.exe doesn't need VCRUNTIME140.dll
+# (the Visual C++ Redistributable) on the user's machine.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]

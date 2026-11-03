@@ -1,0 +1,33 @@
+[package]
+name = "kerf"
+version = "1.0.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/TheSnapped/Kerf"
+description = "Kerf: a lightweight video editor. Cut video and audio, mute, compress (ffmpeg backend)"
+
+[dependencies]
+eframe = "0.31"
+rfd = "0.15"
+cpal = "0.15"
+
+[build-dependencies]
+winresource = "0.1"
+
+# Full debug info for every dependency made target/debug ~1 GB. Panics and
+# backtraces still get file/line info for our own code.
+[profile.dev]
+debug = "line-tables-only"
+# Our crate rebuilds in seconds; the incremental cache isn't worth its size.
+incremental = false
+
+# Dependencies rarely change: build them small (which also makes debug runs smoother).
+[profile.dev.package."*"]
+debug = false
+opt-level = "s"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
