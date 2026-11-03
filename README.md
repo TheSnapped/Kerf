@@ -9,6 +9,14 @@ all or part of its audio, and compress it, with optional downscaling and a targe
 
 ![Kerf editing a video](assets/screenshot.png)
 
+## Why I made it
+
+I wanted a quick way to tidy up game clips before sharing them: cut out the boring or
+unnecessary parts, and mute the moments with slurs or anything else that shouldn't be
+heard, without opening a full video editor. Kerf is built for exactly that: open the
+clip, mark a range, remove or mute it, export. Fast mode does it in seconds without
+re-encoding, and Compress can squeeze the result under an upload size limit.
+
 ## Download
 
 Get **`Kerf-<version>-windows-x64.zip`** from the [Releases page](https://github.com/TheSnapped/Kerf/releases/latest),
